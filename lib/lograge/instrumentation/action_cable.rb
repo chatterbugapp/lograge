@@ -1,6 +1,6 @@
 module Lograge
   module Instrumentation
-    class ActionCable
+    module ActionCable
       def handle_open
         ActiveSupport::Notifications.instrument('connect.action_cable', notification_payload('connect')) { super }
       end
