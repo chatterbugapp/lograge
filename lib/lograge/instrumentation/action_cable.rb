@@ -6,7 +6,7 @@ module Lograge
       end
 
       def handle_close
-        ActiveSupport::Notifications.instrument('disconnect.action_cable', notification_payload('disconnect')) { yield }
+        ActiveSupport::Notifications.instrument('disconnect.action_cable', notification_payload('disconnect')) { super }
       end
 
       def notification_payload(method_name)
